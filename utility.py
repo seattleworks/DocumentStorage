@@ -9,7 +9,6 @@
 
 
 
-
 from chalice import Blueprint, Response
 
 from chalicelib.common import CreateDBConnection

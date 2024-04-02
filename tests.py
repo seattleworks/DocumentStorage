@@ -1,24 +1,15 @@
 # Document Storage for AWS
-# July, 2022
+# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
 #
-# Download the Installation Guide from our website.  Learn about our related consulting services for this free accelerator.
+# Please see README.md
 #
-# You agree that:
-#   1. You are using this software for your organization.
-#   2. You will not take the software and attempt to redistribute it.
-#   3. You will leave this comment block in the software to fairly attribute the source to Seattle Software Works, Inc.
-#   4. There is no warranty for this software from Seattle Software Works, Inc.
-#
-# Seattle Software Works, Inc. agrees that:
-#   1. You may freely use and modify this software for your organization.
-#   2. ?
-#
+
+
 
 # https://www.ontestautomation.com/writing-tests-for-restful-apis-in-python-using-requests-part-1-basic-tests/ 
-
 # pytests tests.py
 
 
