@@ -1,5 +1,4 @@
 # Document Storage for AWS
-# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
@@ -19,8 +18,8 @@ import requests
 import pytest
 import json
 
-SERVERURL = 'http://127.0.0.1:8000/customers/v2/'
-PATHTODOCUMENTS = '/Users/petersamson/Download/'
+SERVERURL = 'http://127.0.0.1:8000/customers/v1/'
+PATHTODOCUMENTS = '/Users/LOCALMACUSER/Download/'
 
 
 

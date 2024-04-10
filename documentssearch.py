@@ -1,5 +1,4 @@
 # Document Storage for AWS
-# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
@@ -22,7 +21,7 @@ documentssearch_routes = Blueprint(__name__)
 
 
 
-@documentssearch_routes.route('/customers/v2/documentssearch', methods=['POST'], content_types=['application/json'], cors=False)
+@documentssearch_routes.route('/customers/v1/documentssearch', methods=['POST'], content_types=['application/json'], cors=False)
 # Notes
 # - POST method is used instead of GET since there may be many search parameters,
 #   and to avoid having sensitive attributes (e.g. Last Name) in the logged URL.
@@ -919,32 +918,6 @@ def documentsSEARCH():
             d['databaseDocumentConsistencyCheck'] = row[37].decode('utf-8')
             dbResultsRows.append(d)
         dbResultsJSON = json.dumps(dbResultsRows, indent=1, default=str)
-
-# https://medium.com/@PyGuyCharles/python-sql-to-json-and-beyond-3e3a36d32853 
-
-#        dbResultsHeader = [x[0] for x in dbCursor.description]
-#        dbResultsRows = []
-#        for row in dbResults:
-#            dbResultsRows.append(dict(zip(dbResultsHeader, row)))
-#        dbResultsJSON = json.dumps(dbResultsRows, indent=2)
-
-#        for row in dbResults:
-#            dbResultsHeaders.add( 
-#                row[0], 
-#                ( {
-#                "agreementId":row[1]
-#                , "businessArea":row[2]
-#                }
-#                )
-#            )
-#        dbResultsJSON = []
-#        for dbResultRow in dbResults:
-#            dbResultsJSON.append(dict(zip(dbResultsHeaders,dbResultRow)))
-#        dbResultsJSON = json.dumps(dbResults, default=str)
-#        return dbResultsJSON
-#        dbResultsRows = [dict((dbResults.description[i][0], value) for i, value in enumerate(row)) for row in dbResults]
-#        dbResultsJSON = json.dumps( [dict(ix) for ix in dbResults] )
-# orig        dbResultsRows = [dict(zip([key[0] for key in dbCursor.description], row)) for row in dbResults]
 
     except Exception as e:
         return Response(

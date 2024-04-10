@@ -1,5 +1,4 @@
 # Document Storage for AWS
-# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
@@ -30,7 +29,7 @@ documentsPOST_routes = Blueprint(__name__)
 
 
 
-@documentsPOST_routes.route('/customers/v2/documents', methods=['POST'], content_types=['application/json'], cors=False)
+@documentsPOST_routes.route('/customers/v1/documents', methods=['POST'], content_types=['application/json'], cors=False)
 # Notes
 # - createdUTCDateTime and updatedUTCDateTime are set to same value for a new Document.
 # - Documents are placed in subfolders in the S3 Bucket.

@@ -1,5 +1,4 @@
 # Document Storage for AWS
-# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
@@ -29,7 +28,7 @@ documentsDELETEGETPATCH_routes = Blueprint(__name__)
 
 
 
-@documentsDELETEGETPATCH_routes.route('/customers/v2/documents/{documentUUId}', methods=['DELETE','GET','PATCH'], content_types=['application/json'], cors=False)
+@documentsDELETEGETPATCH_routes.route('/customers/v1/documents/{documentUUId}', methods=['DELETE','GET','PATCH'], content_types=['application/json'], cors=False)
 # Notes
 # 
 
@@ -308,16 +307,6 @@ def documentsDELETEGETPATCH(documentUUId):
             dbCursor.execute(sqlStatement, sqlArguments)
             dbConnection.commit()
 
-# https://stackoverflow.com/questions/54290649/how-to-download-s3-file-in-serverless-lambda-python 
-# https://github.com/adjr2/webp-to-jpg/blob/master/codes.py 
-#            s3Client = boto3.client('s3',region_name=S3REGIONNAME)
-#            s3FileDataStream = io.BytesIO()
-#            s3Client.download_fileobj(
-#                S3BUCKETNAME
-#                , documentInternalName
-#                , s3FileDataStream
-#                )
-#            s3FileDataStream.seek(0)
             s3Client = boto3.client('s3',region_name=S3REGIONNAME)
             with open(documentName, 'wb') as data:
                 s3Client.download_fileobj(

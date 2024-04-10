@@ -1,5 +1,4 @@
 # Document Storage for AWS
-# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
@@ -18,7 +17,7 @@ utility_routes = Blueprint(__name__)
 
 
 
-@utility_routes.route('/customers/v2/documentsheartbeat', methods=['GET'], content_types=['application/json'], cors=False)
+@utility_routes.route('/customers/v1/documentsheartbeat', methods=['GET'], content_types=['application/json'], cors=False)
 # Notes
 # May be used for a simple connectivity test and as a Lambda warmer.
 
@@ -89,7 +88,7 @@ def documentsheartbeat():
        
 
 
-@utility_routes.route('/customers/v2/documentsinspectrequest', methods=['GET'], content_types=['application/json'], cors=False)
+@utility_routes.route('/customers/v1/documentsinspectrequest', methods=['GET'], content_types=['application/json'], cors=False)
 # Notes
 # May be used to inspect request
 

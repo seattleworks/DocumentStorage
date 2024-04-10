@@ -1,5 +1,4 @@
 # Document Storage for AWS
-# March, 2024
 #
 # Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 # https://seattleworks.com 
@@ -190,11 +189,11 @@ def CreateDBConnection():
     #client = session.client('rds')
 
     #token = client.generate_db_auth_token(DBHostname=ENDPOINT, Port=PORT, DBUsername=USER, Region=REGION)
-    token="kTvymr&["
+    token="SOMEVALUE"
 
     try:
-        # DBConnection = mysql.connector.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
-#        dbConnection = mysql.connector.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME)
+        # dbConnection = mysql.connector.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
+        # dbConnection = mysql.connector.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME)
         dbConnection = psycopg.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME)
         dbConnection.autocommit = False
         return (dbConnection, 'OK')
