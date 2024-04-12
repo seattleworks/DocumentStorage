@@ -19,10 +19,10 @@ Seattle Software Works, Inc. agrees that:
 What to know
 - The accelerator uses a S3 bucket for documents and two PostgreSQL tables for the meta data (cheaper to run than MongoDB?!).
 - Add your preferred method and code to secure the API's.
-- It is possible to use your own key for S3 server-side encryption.
+- It is possible to use your organization's key for S3 server-side encryption.
 - Accelerator timestamps are generated and saved in UTC.
 - The original file name is stored in the meta data, and the file is stored in S3 using the UUID as the file name to ensure uniqueness.
-- We recommend separate implementations for documents (e.g. Customer, Employee, Product/Sales) to maximize security.
+- We recommend separate implementations for types of documents (e.g. Customer, Employee, Product/Sales) to maximize security.
 
 What to review and change
 - Data Model and Indexes.
