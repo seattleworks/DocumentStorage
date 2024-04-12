@@ -24,7 +24,7 @@ def GetGlobalVariables():
 # S3 Region Name.  e.g. 'us-east-1'
 # S3 Server Side Encryption 'AES256' is recommended as a minimum.  Or, review boto3 documentation and enhance code to use your own key.
 
-    S3BUCKETNAME = 'sswdocumentstorage'
+    S3BUCKETNAME = 'CHANGEME'
     S3REGIONNAME = 'us-east-1'
     S3SERVERSIDEENCRYPTION = 'AES256'
 
@@ -177,9 +177,9 @@ def CreateDBConnection():
 # Dev Notes
 # fix process to get and use a token
 
-    ENDPOINT="documentstoragepostgresql.cluster-covgueplbahh.us-east-1.rds.amazonaws.com"
+    ENDPOINT="CHANGEME.us-east-1.rds.amazonaws.com"
     PORT="5432"
-    USER="sswdba"
+    USER="CHANGEME"
     REGION="us-east-1"
     DBNAME="documentstorage"
     os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
