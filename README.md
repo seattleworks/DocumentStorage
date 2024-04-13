@@ -16,24 +16,25 @@ Seattle Software Works, Inc. agrees that:
 
 
 
-What to know
-- The accelerator uses a S3 bucket for documents and two PostgreSQL tables for the meta data (cheaper to run than MongoDB?!).
-- Add your preferred method and code to secure the API's.
+What to know:
+- The accelerator uses a S3 bucket for documents and two PostgreSQL tables for the meta data (lower operational costs than MongoDB!).
+- Add your preferred method to secure the API's.
 - It is possible to use your organization's key for S3 server-side encryption.
-- Accelerator timestamps are generated and saved in UTC.
+- The accelerator timestamps are generated and saved in UTC.
 - The original file name is stored in the meta data, and the file is stored in S3 using the UUID as the file name to ensure uniqueness.
-- We recommend separate implementations for types of documents (e.g. Customer, Employee, Product/Sales) to maximize security.
+- We recommend separate implementations based on types of documents (e.g. Customer, Employee, Product/Sales) to maximize security.
 
-What to review and change
+What to review and potentially change:
 - Data Model and Indexes.
-- In /documents remove the DELETE method for more control (e.g. scheduled process).
+- In /documents remove the DELETE method for more control (e.g. create a scheduled process to delete).
 - In /documentssearch review UsageMode and expected parameters for each (ie., ensure good performance using a high-cardinality parameter).
-- In /documents POST the S3 folder structure may be changed as part of documentInternalName, but do this before go-live for consistency.
-- In /documents POST additional file tags may be added to the document as part of s3FileTags.
+- In /documents POST the S3 folder structure is set as part of documentInternalName, but make changes before go-live for consistency.
+- In /documents POST additional file tags may be added to the document as part of s3FileTags.  These may be useful for S3 reporting.
+- In /documents POST the s3StorageClass should be reviewed.  You might further configure a S3 rule to lower the Storage Class after N days.
 
-Implementation considerations
-- The UI's accessing /documentssearch must provide a usageMode (e.g. CARE, CUSTOMER) to ensure passed parameters and performance.
-- Once implemented in Production you could start converting existing documents well in advance of go-live.
+Implementation considerations:
+- The UI's accessing /documentssearch must provide a usageMode (e.g. CARE, CUSTOMER) to ensure minimum parameters and search performance.
+- Once implemented in Production you might start converting existing documents well in advance of go-live.
 - S3 should auto-delete documents after the stated expiration date, except if legalHold = Y.
 
 END
