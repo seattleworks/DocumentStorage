@@ -8,7 +8,7 @@
 
 
 
-NUMBERROWS = 7500
+NUMBERROWS = 10000
 
 
 
