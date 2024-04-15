@@ -39,6 +39,7 @@ What to review and potentially change:
 - In /documents POST the S3 folder structure is set as part of documentInternalName, but make changes before go-live for consistency.
 - In /documents POST additional file tags may be added to the document as part of s3FileTags.  These may be useful for S3 reporting.
 - In /documents POST the s3StorageClass should be reviewed.  You might further configure a S3 rule to lower the Storage Class after N days.
+- In /documents POST and PATCH log to the table tdocument_auditlog.  You may change or remove this feature (e.g. log to a file).
 - Use /documentsvolumeload to insert random records into the meta-data table, and then test search performance for your configured
   data model and indexes.  10,000+ rows should help identify performance concerns.  After loading random records, remember to
   defragment/rebuild indexes and update table statistics to provide a good baseline.
