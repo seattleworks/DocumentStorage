@@ -2,6 +2,7 @@ DocumentStorage v1.1
 
 Document Storage for AWS is a freemium accelerator from Seattle Software Works, Inc.
 https://seattleworks.com 
+seattle.software.works at gmail
 
 You agree that:
   1. You represent your organization when reviewing and inherently agreeing to these conditions.
